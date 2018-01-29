@@ -1,0 +1,42 @@
+/*------------------------------------*\
+$SETTINGS
+\*------------------------------------*/
+
+/* ============== // Transition // ============== */
+
+$transition-time: .3s;
+$transition-method: ease-in-out;
+
+
+/* ============== // FONTS // ============== */
+@font-face {
+    font-family: 'ultraregular';
+    src: url('../fonts/ultra-webfont.eot');
+    src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ultra-webfont.woff2') format('woff2'),
+        url('../fonts/ultra-webfont.woff') format('woff'),
+        url('../fonts/ultra-webfont.ttf') format('truetype'),
+        url('../fonts/ultra-webfont.svg#ultraregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.ultra {
+    font-family: 'ultraregular';
+    font-weight: normal;
+}
+/* ============== // COLORS // ============== */
+$principal : #505050;
+$darkgray : #7a828d;
+$gray : #e6e6e6;
+$lightgray : #f1f1f1;
+$main : #49c3b1;
+$lightmain : #e4f2ef;
+$darkmain : #329385;
+$secundario : #ff5000;
+$corp : #b6bd00;
+
+$redes: (
+    facebook: #0072a5,
+    twitter: #5db0e8,
+    mail: #787878
+);

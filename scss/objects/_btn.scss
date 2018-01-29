@@ -1,0 +1,86 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+a, button {
+    &:focus {
+        outline: 0;
+    }
+}
+.btn--center {
+    margin: auto;
+}
+.btn--main {
+    display: table;
+    padding: 0 10px;
+    @include font-size(17px, 20px);
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    background: $main;
+    margin-bottom: 20px;
+}
+.btn--border {
+    @include font-size(16px, 34px);
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    display: block;
+    height: 34px;
+    text-align: center;
+    padding: 0;
+}
+.btn--more {
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+    .btn {
+        background: $secundario;
+        border: none;
+        border-left: 20px solid white;
+        border-right: 20px solid white;
+        margin: auto;
+        display: block;
+        position: relative;
+        z-index: $level2;
+        color: white;
+        padding: 0 14px;
+        transition: all 300ms;
+        height: 50px;
+        line-height: cr(50px);
+        width: 200px;
+        text-align: center;
+        @include respond-to(desktop) {
+            &:hover {
+                background: lighten($secundario, 8);
+            }
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $gray;
+        z-index: $level1;
+    }
+}
+.btn--submit {
+    height: 38px;
+    @include font-size(18px, 38px);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: $main;
+    padding: 0 20px;
+    border: 0;
+    transition: all 300ms;
+    .no-touch & {
+        &:hover {
+            background: darken($main, 20);
+        }
+    }
+}

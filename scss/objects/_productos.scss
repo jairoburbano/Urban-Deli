@@ -1,0 +1,571 @@
+/*------------------------------------*\
+$PRODUCTOS
+\*------------------------------------*/
+.productos {
+    &.wrap {
+        padding: 0 40px;
+        @include respond-to(tablet) {
+            padding: 0 30px;
+        }
+    }
+    .item {
+        @include respond-to(desktop) {
+            position: relative;
+            &:hover {
+                .more-options {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+.filtros {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    @include respond-to(tablet) {
+        flex-flow: row wrap;
+        justify-content: flex-end;
+    }
+}
+.more-options {
+    position: absolute;
+    background: rgba($main, .9);
+    width: 200px;
+    height: 200px;
+    top: 10px;
+    left: 50%;
+    margin-left: -100px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    border-radius: 4px;
+    @include respond-to(desktop) {
+        display: flex;
+        opacity: 0;
+        transition: all 300ms;
+    }
+    button, a {
+        width: 165px;
+        height: 45px;
+        border: 1px solid white;
+        background-color: transparent;
+        @include font-size(16px, 45px);
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 0;
+        transition: all 300ms;
+        @include respond-to(desktop) {
+            &:hover {
+                background: white;
+                color: $main;
+            }
+        }
+    }
+    button {
+        margin-bottom: 25px;
+    }
+}
+.pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    justify-content: center;
+    @include respond-to(tablet) {
+        justify-content: flex-end;
+    }
+    &::after {
+        content: '';
+        width: calc(100% - 30px);
+        background: url(../img/borde-junto.svg) center repeat-x;
+        position: absolute;
+        left: 0;
+        height: 7px;
+        top: 18.3px;
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
+        @include respond-to(desktop) {
+            width: calc(100% - 50px);
+        }
+    }
+    svg {
+        width: 8px;
+        height: 15px;
+        fill: $gray;
+        transition: all 300ms;
+        @include respond-to(desktop) {
+            &:hover {
+                fill: $darkgray;
+            }
+        }
+    }
+    li {
+        @include font-size(17px, 40px);
+        text-align: center;
+        color: $main;
+        background: white;
+        position: relative;
+        z-index: $level2;
+        &:last-child {
+            @include respond-to(tablet) {
+                margin-right: 130px;
+            }
+            @include respond-to(desktop) {
+                margin-right: 150px;
+            }
+        }
+        &.current {
+            border: 1px solid $gray;
+            a {
+                color: $main;
+            }
+        }
+        a {
+            padding: 0 5px;
+            @include font-size(17px, 40px);
+            width: 30px;
+            height: 40px;
+            color: $darkgray;
+            display: block;
+        }
+    }
+}
+.alert {
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    background: $main;
+    text-align: center;
+    position: relative;
+    border-radius: 4px;
+    padding: 10px 20px;
+    @include respond-to(tablet) {
+        height: 40px;
+        padding: 0;
+        width: calc(100% - 60px);
+        margin-left: 30px;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 100px);
+        margin-left: 50px;
+    }
+    p {
+        @include font-size(20px, 24px);
+        margin-bottom: 15px;
+        @include respond-to(tablet) {
+            @include font-size(20px, 40px);
+            margin-bottom: 0;
+        }   
+    }
+    a {
+        @include font-size(15px, 18px);
+        color: white;
+        display: block;
+        font-weight: normal;
+        text-decoration: underline;
+        @include respond-to(tablet) {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            @include font-size(15px, 40px);
+        }
+        @include respond-to(desktop) {
+            right: 30px;
+        }
+    }
+}
+.single--productos {
+    padding: 0 25px;
+}
+.item--single {
+    @include respond-to(tablet) {
+        width: 100%;
+        margin: 0;
+        margin-top: 60px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .border--style {
+        @include respond-to(tablet) {
+            width: 320px;
+            height: 320px;
+            margin-right: 20px;
+        }
+        @include respond-to(desktop) {
+            margin-right: 120px;
+        }
+    }
+    .block--right {
+        @include respond-to(tablet) {
+            width: calc(100% - 340px);
+        }
+        @include respond-to(desktop) {
+            width: calc(100% - 440px);
+            max-width: 500px;
+        }
+    }
+    .item__title {
+        @include font-size(30px, 34px);
+        @include respond-to(tablet) {
+            margin-top: 0;
+            @include font-size(30px, 44px);
+        }
+    }
+    .item__text {
+        p {
+            @include font-size(18px, 23px);
+        }
+    }
+    .item__valor {
+        margin-bottom: 30px;
+    }
+    .item__price {
+        @include font-size(20px, 24px);
+    }
+}
+.single--box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        display: flex;
+        flex-flow:  row wrap;
+    }
+    @include respond-to(desktop) {
+        max-width: 340px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: url(../img/border/border-6-hor.svg) center bottom repeat-x;
+        z-index: $level1;
+    }
+    .quantity {
+        margin-bottom: 10px;
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+        }
+    }
+    .item__add {
+        width: 165px;
+        height: 34px;
+        @include font-size(14px, 34px);
+        @extend .ultra;
+        @include respond-to(tablet) {
+            margin-left: 10px;
+        }
+    }
+}
+.single__box__title {
+    @include font-size(15px, 18px);
+    position: relative;
+    z-index: $level2;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+    p {
+        padding-right: 10px;
+        background: white;
+        display: table;
+    }
+}
+.share {
+    display: flex;
+    flex-flow: row wrap;
+    a {
+        @each $redes, $color in $redes {
+            &.#{$redes} {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $color;
+                border-radius: 50%;
+                margin-right: 10px;
+                transition: all 300ms;
+                @include respond-to(desktop) {
+                    &:hover {
+                        background: $color;
+                        svg {
+                            fill: white;
+                        }
+                    }
+                }
+                svg {
+                    max-width: 20px;
+                    max-height: 20px;
+                    fill: $color;
+                    transition: all 300ms;
+                }
+            }
+        }
+    }
+}
+.related {
+    padding: 35px 0;
+    background: #f1f1f1;
+    h1 {
+        @include font-size(20px, 24px);
+        @extend .ultra;
+        margin-top: 0;
+        padding: 15px;
+        text-align: center;
+        border: 4px dotted $darkgray;
+        margin: auto;
+        display: table;
+        @include respond-to(tablet) {
+            @include font-size(25px, 44px);
+            padding: 0 25px;
+        }
+    }
+    .item__valor {
+        margin-bottom: 10px;
+        @include less-than(desktop) {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: baseline;
+            .item__price {
+                margin-top: 0;
+                margin-right: 15px;
+            }
+        }
+    }
+    .slide {
+        position: relative;
+        display: block;
+    }
+    .slides {
+        @include respond-to(tablet) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    li {
+        @include respond-to(tablet) {
+            width: 230px;
+        }
+        @include respond-to(desktop) {
+            width: 260px;
+        }
+        &:nth-child(4) {
+            @include respond-to(tablet) {
+                display: none;
+            }
+            @include respond-to(desktop) {
+                display: block;
+            }
+        }
+    }
+    .item {
+        padding: 0 45px;
+        @include respond-to(tablet) {
+            padding: 0;
+        }
+    }
+    .flex-prev, .flex-next {
+        width: 8px;
+        height: 100%;
+        position: absolute;
+        left: 20px;
+        top: 0;
+        display: flex;
+        align-items: center;
+        svg {
+            width: 8px;
+            height: 15px;
+            fill: $main;
+            display: block;
+        }
+    }
+    .flex-next {
+        left: auto;
+        right: 20px;
+    }
+    .border--style {
+        img {
+            backface-visibility: hidden;
+        }
+    }
+}
+.item {
+    .border--style {
+        @include respond-to(desktop) {
+            height: 220px;
+        }
+    }
+    &.item--single {
+        .border--style {
+            @include respond-to(desktop) {
+                height: 320px;
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 22px;
+                    height: 22px;
+                    position: absolute;
+                    right: 12px;
+                    top: 12px;
+                    background: url(../img/zoom.svg) center no-repeat;
+                }
+            }   
+        }   
+    }
+}
+.zoomContainer {
+    z-index: $level11;
+    img {
+        max-height: 296px;
+    }
+}
+.zoomWindowContainer {
+    width: calc(100vw - 390px) !important;
+}
+.zoomWindow{
+    max-width: calc(800px - 390px);
+    width: calc(100vw - 390px) !important;
+    border: 2px solid $gray !important;
+    left: 330px !important;
+    top: -15px !important;
+    height: 330px !important;
+}
+.zoomTint {
+    height: 320px !important;
+}
+.single {
+    .zoomWindowContainer {
+        width: calc(100vw - 390px) !important;
+    }
+    .zoomWindow {
+        max-width: calc(1200px - 390px);
+        width: calc(100vw - 390px) !important;
+        border: 2px solid $gray !important;
+        left: 330px !important;
+        top: -20px !important;
+    }
+}
+.alert--fixed {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    background: $main;
+    z-index: $level11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px 0 15px;
+    @include respond-to(tablet) {
+        height: 60px;
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    p {
+        @include font-size(18px, 24px);
+        text-transform: uppercase;
+        color: white;
+        width: calc(100% - 50px);
+    }
+    .alert--icon {
+        width: 20px;
+        height: 24px;
+        position: relative;
+        padding: 0;
+        display: block;
+        transition: all 300ms;
+        margin-left: 30px;
+        svg {
+            width: 25px;
+            height: 25px;
+            stroke: white;
+            @include respond-to(desktop) {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .header__compras__items {
+            @include font-size(10px, 10px);
+            height: 18px;
+            @extend .ultra;
+            position: absolute;
+            border: 1px solid white;
+            border-radius: 10px;
+            background: $secundario;
+            color: white;
+            padding: 4px 3px;
+            top: -5px;
+            left: 15px;
+            min-width: 18px;
+            text-align: center;
+        }
+    }
+}
+.flavour {
+    position: relative;
+    width: 225px;
+    &::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background: $gray;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: $level1;
+    }
+    &:before {
+        content: '';
+        z-index: $level2;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 3.5px 0 3.5px;
+        border-color: $darkgray transparent transparent transparent;
+    }
+    select {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $gray;
+        background-color: transparent;
+        border-radius: 0;
+        position: relative;
+        z-index: $level3;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        padding: 0 38px 0 8px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.woocommerce-message, .cart-empty, .return-to-shop {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}

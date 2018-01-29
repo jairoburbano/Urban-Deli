@@ -1,0 +1,127 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Lato', sans-serif;
+    color: $darkgray;
+}
+body {
+    padding-top: 60px;
+    @include respond-to(tablet) {
+        padding-top: 0;
+    }
+}
+@include sticky(595px, page-wrap, footer);
+@include respond-to(tablet) {
+    @include sticky(315px, page-wrap, footer);
+}
+@include respond-to(desktop) {
+    @include sticky(212px, page-wrap, footer);
+}
+/*Estilos wysiwyg*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+h1 {
+    @include font-size(32px, 38px);
+}
+h2 {
+    @include font-size(28px, 34px);
+}
+h3 {
+    @include font-size(24px, 28px);
+}
+h4 {
+    @include font-size(20px, 24px);
+}
+h5 {
+    @include font-size(18px, 22px);
+}
+h6 {
+    @include font-size(16px, 20px);
+}
+.main {
+    @extend .ultra;
+    color: $main;
+    @include font-size(40px, 44px);
+}
+.title {
+    @include font-size(20px, 24px);
+    display: table;
+    @extend .ultra;
+    color: $darkgray;
+    border: 2px solid $gray;
+    padding: 19px 37px;
+    position: relative;
+    margin: 35px auto 30px;
+    @include respond-to(tablet) {
+        @include font-size(30px, 36px);
+    }
+    span {
+        width: calc(100% + 18px);
+        position: absolute;
+        left: -(18px / 2);
+    }
+    > .top, > .bot {
+        top: -((10px / 2) + (2px / 2));
+        display: flex;
+        justify-content: space-between;            
+        height: 10px;
+        &::before, &::after {
+            content: '';
+            width: 18px;
+            height: 10px;
+            background: url(../img/border-1.svg) no-repeat;
+        }
+    }
+    > .bot {
+        top: auto;
+        bottom: -((10px / 2) + (2px / 2));
+    }
+}
+p {
+    @include font-size(17px, 20px);
+    &.small {
+        @include font-size(15px, 18px);
+    }
+    &.bajada {
+        @include font-size(23px, 27px);
+    }
+    &.down {
+        @include font-size(17px, 24px);
+        text-align: center;
+    }
+}
+a {
+    @include font-size(17px, 20px);
+    color: $main;
+    &.small {
+        @include font-size(15px, 18px);
+        text-decoration: underline !important;
+    }
+}
+blockquote {
+    @include font-size(17px, 30px);
+    font-style: italic;
+    color: $main;
+}
+img {
+    max-width: 100%;
+    //object-fit: contain;
+}
+input, textarea {
+    &:focus {
+        outline: none;
+    }
+}
+.mbot-footer {
+    margin-bottom: 50px;
+}
+.bajada--small {
+    max-width: 560px;
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}

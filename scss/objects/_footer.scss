@@ -1,0 +1,285 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.footer {
+    background: $secundario;
+    .wrap {
+        padding: 30px 20px 180px;
+        @include respond-to(tablet) {
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            padding: 30px 20px 20px;
+        }
+    }
+}
+.footer__logo {
+    width: calc(100% - 60px);
+    margin: auto;
+    padding: 20px 0;
+    border-top: 1px solid rgba(white, .2);
+    //    border-bottom: 1px solid rgba(white, .2);
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    @include respond-to(tablet) {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 180px;
+        border: none;
+        padding-top: 0;
+        margin: 0;
+    }
+    @include respond-to(desktop) {
+        width: 160px;
+    }
+    img {
+        width: 112px;
+        margin: auto;
+        display: block;
+        @include respond-to(tablet) {
+            width: 130px;
+        }
+    }
+}
+.footer__redes {
+    display: none;
+}
+.footer__links {
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        width: 33.3333%;
+        padding: 0 15px;
+        margin-bottom: 0;
+    }
+    @include respond-to(desktop) {
+        padding: 0;
+        padding-left: 10px;
+    }
+    p {
+        @include font-size(16px, 18px);
+        color: white;
+        overflow: hidden;
+        font-weight: bold;
+        svg {
+            width: 430px;
+            height: 3px;
+            display: block;
+            fill: white;
+            margin: 10px 0 15px;
+        }
+    }
+}
+.footer__links__list {
+    color: white;
+    @include font-size(8px, 20px);
+    @include respond-to(tablet) {
+        @include font-size(12px, 16px);
+    }
+    @include respond-to(desktop) {
+        column-count: 2;
+    }
+    a {
+        @include font-size(13px, 16px);
+        color: white;
+        padding-left: 15px;
+        position: relative;
+        &::before {
+            content: '';
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 5px;
+            background: white;
+        }
+        @include respond-to(tablet) {
+            @include font-size(15px, 30px);
+        }
+    }
+}
+.newsletter {
+    @include respond-to(tablet) {
+        width: 100%;
+        padding: 0 0 0 15px;
+        max-width: 370px;
+    }
+    @include respond-to(desktop) {
+        padding: 0;
+        width: calc(100% - 160px);
+    }
+    p {
+        @include font-size(15px, 18px);
+        color: white;
+        padding-right: 30px;
+        margin-bottom: 15px;
+        &.newsletter__title {
+            @include font-size(15px, 18px);
+            position: relative;
+            padding-right: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+            svg {
+                width: 32px;
+                height: 24px;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                fill: #000;
+            }
+        }
+    }
+    .border__foo {
+        width: 100%;
+        height: 3px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 15px;
+        svg {
+            width: 430px;
+            height: 3px;
+            fill: white;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+.footer__block {
+    @include respond-to(tablet) {
+        width: calc(66.666% - 180px);
+        max-width: 370px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+    }
+    @include respond-to(desktop) {
+        width: calc(66.666% - 160px);
+        flex-flow: row wrap;
+        max-width: 100%;
+        padding-left: 40px;
+        justify-content: space-between;
+    }
+}
+.newslettter-form {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    p {
+        width: 100%;
+    }
+    input[type="text"] {
+        width: calc(100% - 90px);
+        height: 25px;
+        border-radius: 4px;
+        @include font-size(16px, 16px);
+        padding: 4.5px 8px;
+        border: 1px solid white;
+        background: #f0ecec;
+    }
+    input[type="submit"] {
+        width: 80px;
+        height: 25px;
+        background-color: transparent;
+        color: white;
+        border-radius: 4px;
+        border: 1px solid white;
+        padding: 0;
+        transition: all 300ms;
+        @include respond-to(desktop) {
+            &:hover {
+                background: white;
+                color: $secundario;
+            }
+        }
+    }
+}
+.payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 20px;
+    @include respond-to(tablet) {
+        flex-flow: column wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-left: 15px;
+        padding-bottom: 0;
+    }
+    @include respond-to(desktop) {
+        padding-top: 0;
+        width: 160px;
+    }
+    img {
+        height: 37px;
+        margin: 0 5px;
+        @include respond-to(tablet) {
+            margin-bottom: 10px;
+        }
+        @include respond-to(desktop) {
+            height: 60px;
+        }
+        &:last-child {
+            height: 20px;
+            @include respond-to(desktop) {
+                height: 30px;
+            }
+        }
+    }
+}
+.form-newsletter {
+    position: relative;
+    .message {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: -45px;
+        left: 0;
+        p {
+            @include font-size(16px, 20px);
+            font-weight: bold;
+            color: white;
+            text-transform: none;
+        }
+    }
+    p.error {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        @include font-size(16px, 20px);
+        color: white;
+    }
+}
+.credits {
+    color: white;
+    @include font-size(12px, 16px);
+    width: 100%;
+    border-top: 1px solid rgba(white, .2);
+    margin-top: 15px;
+    padding-top: 15px;
+    display: block;
+    text-align: center;
+    @include respond-to(tablet) {
+        padding: 15px 20px 0;
+    }
+    span {
+        margin-right: 5px;
+    }
+    svg {
+        fill: white;
+        .no-touch & {
+            transition: all 300ms;
+            opacity: .5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

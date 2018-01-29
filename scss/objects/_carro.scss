@@ -1,0 +1,323 @@
+/*------------------------------------*\
+$CARRO
+\*------------------------------------*/
+.compra {
+    padding: 0 10px;
+    @include respond-to(tablet) {
+        padding: 0 35px;
+    }
+}
+.woocommerce {
+    position: relative;
+}
+.shop_table {
+    width: 100%;   
+}
+.tab__title, thead {
+    display: none;
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content:flex-end;
+        padding-right: 20px;
+        @include font-size(18px, 20px);
+        margin-bottom: 5px;
+        padding-top: 30px;
+    }
+    tr {
+        @include respond-to(tablet) {
+            width: 100%;
+            display: flex;
+            height: 20px;
+        }
+        .product-remove, .product-thumbnail {
+            display: none;
+        }
+    }
+    th {
+        text-align: left;
+    }
+    .product-name {
+        width: calc(100% - 440px);
+        padding-left: 0;
+        @include respond-to(desktop) {
+            width: calc(100% - 510px);
+        }
+    }
+    .product-name, .product-price, .product-quantity, .product-subtotal {
+        font-family: 'Lato', sans-serif;
+        color: $darkgray;
+        font-weight: normal;
+        @include font-size(18px, 21.6px);
+    }
+}
+.tab__item, .cart_item {
+    position: relative;    
+    padding: 10px;
+    padding-left: 80px;
+    border: 1px solid $gray;
+    margin-top: -1px;
+    display: block;
+    @include respond-to(tablet) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        position: relative;
+        &::after {
+            content: '';
+            width: 1px;
+            height: 100%;
+            right: 170px;
+            top: 0;
+            position: absolute;
+            background: $gray;
+        }
+    }
+}
+.product-remove {
+    position: absolute;
+    left: 80px;
+    bottom: 8px;
+    @include respond-to(tablet) {
+        left: auto;
+        right: 103px;
+        bottom: 18px;
+    }
+    a {
+        @include font-size(12px, 14px);
+    }
+}
+.tab__item__media, .product-thumbnail {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    @include respond-to(tablet) {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+    a {
+        display: block;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.tab__item__title, .product-name {
+    width: 100%;
+    display: block;
+    @include font-size(14px, 16.8px);
+    color: $main;
+    @extend .ultra;
+    margin-bottom: 10px;
+    @include respond-to(tablet) {
+        width: calc(100% - 528px);
+        padding: 0 10px;
+        margin-bottom: 0;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 588px);
+    }
+}
+.tab__item__cantidad, .product-quantity {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    @include respond-to(tablet) {
+        width: 140px;
+        margin-bottom: 0;
+    }
+    @include respond-to(desktop) {
+        width: 200px;
+    }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.tab__item__precio, .product-price {
+    width: 100%;
+    display: block;
+    @include font-size(17px, 20px);
+    margin-bottom: 10px;
+    @include respond-to(tablet) {
+        width: 148px;
+        margin-bottom: 0;
+    }
+}
+.tab__item__total, .product-subtotal {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    @include respond-to(tablet) {
+        width: 150px;
+        padding-left: 15px;
+    }
+    p {
+        @include font-size(16px, 19px);
+        span {
+            @include font-size(14px, 17px);
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+    }
+}
+.tab__resume {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+.actions {
+    position: relative;
+    @include respond-to(tablet) {
+        position: static;
+    }
+    input[type="submit"] {
+        height: 30px;
+        text-align: center;
+        @include font-size(15px, 30px);
+        background: $main;
+        color: white;
+        border: none;
+        margin-left: auto;
+        margin-right: 0;
+        display: block;
+        padding: 0 15px;
+        transition: all 300ms;
+        @include respond-to(desktop) {
+            &:hover {
+                background: darken($main, 20);
+            }
+        }
+        &:first-of-type {
+            position: absolute;
+            top: 25px;
+            right: 0;
+            @include respond-to(tablet) {
+                top: auto;
+                bottom: 265px;
+            }
+        }
+    }
+}
+.tab__desc, .coupon {
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    @include respond-to(tablet) {
+        width: 300px;
+        padding-bottom: 80px;
+    }
+    p, label {
+        @include font-size(15px, 18px);
+        margin-bottom: 15px;
+        text-align: center;
+        text-align: center;
+        display: block;
+    }
+    input[type="text"] {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid $gray;
+        height: 36px;
+        padding: 10px;
+        @include font-size(16px, 16px);
+        margin-bottom: 10px;
+    }
+}
+.cart-collaterals {
+    position: relative;
+}
+.cart_totals {
+    @include respond-to(tablet) {
+        position: absolute;
+        right: 0;
+        top: -240px;
+    }
+}
+.tab__result, .cart_totals  {
+    margin-bottom: 45px;
+    @include respond-to(tablet) {
+        width: 340px;
+    }
+    .tab__result__title, h2 {
+        @include font-size(16px, 19px);
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        @include respond-to(desktop) {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            display: table;
+            line-height: cr(36px);
+        }
+    }
+    .shop_table {
+        .tab__result__item, tr {
+            width: 100%;
+            height: 36px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            @include font-size(15px, 18px);
+            border: 1px solid $gray;
+            margin-bottom: 5px;
+        }
+        th, td {
+            @include font-size(17px, 20px);
+            font-weight: normal;
+        }
+        .tab--fill, tr:last-child {
+            background: $gray;
+            font-weight: bold;
+            th, td {
+                font-weight: bold;
+            }
+        }
+    }
+}
+.tab__final, .wc-proceed-to-checkout a {
+    width: 100%;
+    height: 50px;
+    @include font-size(17px, 20px);
+    background: $main;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 300ms;
+    color: white;
+    @include respond-to(desktop) {
+        &:hover {
+            background: darken($main, 20);
+        }
+    }
+}
+.closed-store {
+    width: 100%;
+    background: $secundario;
+    text-align: center;
+    color: white;
+    padding: 30px 0;
+}
+.closed-store__big {
+    margin-top: 20px;
+    @include font-size(30px, 34px);
+    color: white;
+    @extend .ultra;
+    margin-bottom: 20px;
+}

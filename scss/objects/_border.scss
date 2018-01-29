@@ -1,0 +1,406 @@
+/*------------------------------------*\
+$BORDER
+\*------------------------------------*/
+.border--style {
+    position: relative;
+    padding: 12px;
+    display: block;
+}
+.border-1 {
+    border: 1px solid $gray;
+    .top, .bot {
+        &::before, &::after {
+            content: '';
+            width: 1px;
+            height: 10px;
+            background: $gray;
+            position: absolute;
+            top: -10px;
+        }
+        &::before {
+            left: -1px;
+        }
+        &::after {
+            right: -1px;
+        }
+    }
+    .bot {
+        &::before, &::after {
+            top: auto;
+            bottom: -10px;
+        }
+    }
+    .left, .right {
+        &::before, &::after {
+            content: '';
+            width: 10px;
+            height: 1px;
+            background: $gray;
+            position: absolute;
+            top: -1px;
+        }
+        &::before {
+            left: -10px;
+        }
+        &::after {
+            right: -10px;
+        }
+    }
+    .right {
+        &::before, &::after {
+            top: auto;
+            bottom: -1px;
+        }
+    }
+}
+.border-2 {
+    .top, .bot {
+        background-image: url(../img/border/border-2-hor.svg);
+        background-repeat: repeat-x;
+    }
+    .top, .bot {
+        width: calc(100% - 14px);
+        height: 12px;
+        position: absolute;
+        left: 6px;
+        background-repeat: repeat-x;
+        z-index: $level1;
+        &::after, &::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 0;
+        }
+        &::before {
+            background-image: url(../img/border/border-2-tl.svg);
+            left: -6px;
+        }
+        &::after {
+            background-image: url(../img/border/border-2-tr.svg);
+            right: -6px;
+        }
+    }
+    .top {
+        top: 0;
+    }
+    .bot {
+        bottom: 0;
+        background-position: bottom;
+        &::before {
+            background-image: url(../img/border/border-2-bl.svg);
+            left: -6px;
+            top: auto;
+            bottom: 0;
+        }
+        &::after {
+            background-image: url(../img/border/border-2-br.svg);
+            right: -6px;
+            top: auto;
+            bottom: 0;
+        }
+    }
+    .left, .right {
+        width: 7px;
+        height: calc(100% - 14px);
+        top: 6px;
+        background: url(../img/border/border-2-ver.svg);
+        background-repeat: repeat-y;
+        position: absolute;
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        right: 0;
+    }
+}
+.border-3 {
+    border: 2px solid $gray;
+    span {
+        width: calc(100% + 18px);
+        position: absolute;
+        left: -(18px / 2);
+    }
+    > .top, > .bot {
+        top: -((10px / 2) + (2px / 2));
+        display: flex;
+        justify-content: space-between;            
+        height: 10px;
+        &::before, &::after {
+            content: '';
+            width: 18px;
+            height: 10px;
+            background-image: url(../img/border-1.svg);
+            background-repeat: no-repeat;
+        }
+    }
+    > .bot {
+        top: auto;
+        bottom: -((10px / 2) + (2px / 2));
+    }
+}
+.border-4 {
+    border: 4px dotted $gray;
+    span {
+        display: block;
+    }
+}
+.border-5 {
+    .top, .bot {
+        background-image: url(../img/border/border-5-hor.svg);
+    }
+    .top, .bot {
+        width: calc(100% - 16px);
+        height: 10px;
+        position: absolute;
+        left: 8px;
+        background-repeat: repeat-x;
+        z-index: $level1;
+        &::after, &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 0;
+        }
+        &::before {
+            background-image: url(../img/border/border-5-tl.svg);
+            left: -8px;
+        }
+        &::after {
+            background-image: url(../img/border/border-5-tr.svg);
+            right: -8px;
+        }
+    }
+    .top {
+        top: 0;
+        background-position: top left;
+    }
+    .bot {
+        bottom: 0;
+        background-position: bottom left;
+        &::before {
+            background-image: url(../img/border/border-5-bl.svg);
+            left: -8px;
+            top: auto;
+            bottom: 0;
+        }
+        &::after {
+            background-image: url(../img/border/border-5-br.svg);
+            right: -8px;
+            top: auto;
+            bottom: 0;
+        }
+    }
+    .left, .right {
+        width: 10px;
+        height: calc(100% - 10px);
+        top: 5px;
+        background-image: url(../img/border/border-5-ver.svg);
+        background-repeat: repeat-y;
+        position: absolute;
+    }
+    .left {
+        left: 0;
+        background-position: top left;
+    }
+    .right {
+        right: 0;
+        background-position: top right;
+    }
+}
+.border-6 {
+    .top, .bot {
+        background: url(../img/border/border-6-hor.svg) repeat-x;
+    }
+    .top, .bot {
+        width: calc(100% - 9px);
+        height: 9px;
+        position: absolute;
+        left: 4.5px;
+        background-repeat: repeat-x;
+        z-index: $level1;
+        &::after, &::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            top: 0;
+        }
+        &::before {
+            background-image: url(../img/border/border-6-tl.svg);
+            left: -4.5px;
+        }
+        &::after {
+            background-image: url(../img/border/border-6-tr.svg);
+            right: -4.5px;
+        }
+    }
+    .top {
+        top: 0;
+        background-position: top left;
+    }
+    .bot {
+        bottom: 0;
+        background-position: bottom left;
+        &::before {
+            background-image: url(../img/border/border-6-bl.svg);
+            left: -4.5px;
+            top: auto;
+            bottom: 0;
+        }
+        &::after {
+            background-image: url(../img/border/border-6-br.svg);
+            right: -4.5px;
+            top: auto;
+            bottom: 0;
+        }
+    }
+    .left, .right {
+        width: 10px;
+        height: calc(100% - 9px);
+        top: 0;
+        background-image: url(../img/border/border-6-ver.svg);
+        background-repeat: repeat-y;
+        position: absolute;
+    }
+    .left {
+        left: 0;
+        background-position: top left;
+    }
+    .right {
+        right: 0;
+        background-position: top right;
+    }
+}
+/*Border dark*/
+.border--dark {
+    .border-1 {
+        border: 1px solid #b4b9bf;
+        .top, .bot {
+            &::before, &::after {
+                background: #b4b9bf;
+            }
+        }
+        .left, .right {
+            &::before, &::after {
+                background: #b4b9bf;
+            }
+        }
+    }
+    .border-2 {
+        .top, .bot {
+            background-image: url(../img/borderdark/border-2-hor.svg);
+            background-repeat: repeat-x;
+        }
+        .top, .bot {
+            &::before {
+                background-image: url(../img/borderdark/border-2-tl.svg);
+            }
+            &::after {
+                background-image: url(../img/borderdark/border-2-tr.svg);
+            }
+        }
+        .bot {
+            bottom: 0;
+            &::before {
+                background-image: url(../img/borderdark/border-2-bl.svg);
+            }
+            &::after {
+                background-image: url(../img/borderdark/border-2-br.svg);
+            }
+        }
+        .left, .right {
+            background-image: url(../img/borderdark/border-2-ver.svg);
+            background-repeat: repeat-y;
+        }
+    }
+    .border-3 {
+        border: 2px solid $darkgray;
+        > .top, > .bot {
+            &::before, &::after {
+                background-image: url(../img/border-1-dark.svg);
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    .border-4 {
+        border: 4px dotted $darkgray;
+    }
+    .border-5 {
+        .top, .bot {
+            background-image: url(../img/borderdark/border-5-hor.svg);
+        }
+        .top, .bot {
+            &::before {
+                background-image: url(../img/borderdark/border-5-tl.svg);
+            }
+            &::after {
+                background-image: url(../img/borderdark/border-5-tr.svg);
+            }
+        }
+        .bot {
+            &::before {
+                background-image: url(../img/borderdark/border-5-bl.svg);
+            }
+            &::after {
+                background-image: url(../img/borderdark/border-5-br.svg);
+            }
+        }
+        .left, .right {
+            background-image: url(../img/borderdark/border-5-ver.svg);
+        }
+    }
+    .border-6 {
+        .top, .bot {
+            background: url(../img/borderdark/border-6-hor.svg) repeat-x;
+        }
+        .top, .bot {
+            &::before {
+                background-image: url(../img/borderdark/border-6-tl.svg);
+            }
+            &::after {
+                background-image: url(../img/borderdark/border-6-tr.svg);
+            }
+        }
+        .bot {
+            &::before {
+                background-image: url(../img/borderdark/border-6-bl.svg);
+            }
+            &::after {
+                background-image: url(../img/borderdark/border-6-br.svg);
+            }
+        }
+        .left, .right {
+            background-image: url(../img/borderdark/border-6-ver.svg);
+            background-repeat: repeat-y;
+        }
+    }
+}
+.border--main {
+    .border-5 {
+        .top, .bot {
+            background-image: url(../img/bordermain/border-5-hor.svg);
+        }
+        .top, .bot {
+            &::before {
+                background-image: url(../img/bordermain/border-5-tl.svg);
+            }
+            &::after {
+                background-image: url(../img/bordermain/border-5-tr.svg);
+            }
+        }
+        .bot {
+            &::before {
+                background-image: url(../img/bordermain/border-5-bl.svg);
+            }
+            &::after {
+                background-image: url(../img/bordermain/border-5-br.svg);
+            }
+        }
+        .left, .right {
+            background-image: url(../img/bordermain/border-5-ver.svg);
+        }
+    }
+}

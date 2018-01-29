@@ -1,0 +1,207 @@
+/*------------------------------------*\
+$NOVEDADES
+\*------------------------------------*/
+.listado--novedades {
+    .item {
+        width: calc(50% - 20px);
+        @include respond-to(tablet) {
+            width: 33%;
+            margin: 40px 0;
+            padding: 0 15px;
+        }
+        @include respond-to(desktop) {
+            width: 220px;
+            margin: 30px 20px;
+            padding: 0;
+        }
+    }
+}
+.item--novedades {
+    .item__title {
+        a {
+            @include font-size(18px, 21px);
+            color: $darkgray;
+            text-transform: none;
+            font-family: 'Lato', sans-serif;
+        }
+    }
+    .item__text {
+        p {
+            @include font-size(15px, 18px);
+        }
+    }
+    .item__add {
+        font-family: 'Lato', sans-serif;
+    }
+}
+.single__container {
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+.single__media {
+    padding: 20px;
+    margin-bottom: 40px;
+    @include respond-to(tablet) {
+        width: 440px;
+        margin: 0 auto 30px;
+    }
+    @include respond-to(desktop) {
+        margin-left: 70px;
+    }
+}
+.single__content {
+    @include respond-to(tablet) {
+        width: 520px;
+        margin: auto;
+    }
+    h1.main {
+        margin-bottom: 20px;
+    }
+    p.bajada {
+        margin-bottom: 20px;
+    }
+    .blockquote {
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            padding-top: 25px;
+            margin-bottom: 50px;
+        }
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 15px;
+    }
+    .single--box {
+        margin-top: 30px;
+    }
+    .single__box__title {
+        p {
+            margin-bottom: 0;
+        }
+    }
+    > img {
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            margin-bottom: 40px;
+        }
+    }
+    > ul {
+        li {
+            padding-left: 15px;
+            position: relative;
+            &::before {
+                content: '';
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                position: absolute;
+                top: 8px;
+                left: 5px;
+                background: $main;
+            }
+        }
+    }
+    > ol {
+        padding-left: 15px;
+        list-style: decimal;
+    }
+}
+.filtro--novedades {
+    width: 100%;
+    height: 40px;
+    border: 1px solid $gray;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.filtro__container {
+    display: none;
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.filtro__content {
+    width: calc(100% - 80px);
+    overflow: hidden;
+}
+.filtro__box {
+    width: 9999em;
+}
+.filtro__list {
+    display: table;
+    position: relative;
+    a {
+        padding: 0 15px;
+        color: $main;
+        float: left;
+        @include font-size(15px, 40px);
+        &.active {
+            color: white;
+            background: $main;
+        }
+    }
+}
+.filtro__more {
+    color: $main;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    display: flex;
+    position: relative;
+    &.disable {
+        opacity: 0;
+    }
+}
+.filtro-back, .filtro-next {
+    width: 10px;
+    height: 40px;
+    display: block;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    margin: 0 4px;
+    &:focus {
+        outline: none;
+    }
+    &.disabled {
+        &::after {
+            border-color: transparent red transparent transparent;
+        }
+    }
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 10px 5px 0;
+        border-color: transparent $main transparent transparent;
+        position: absolute;
+        top: 15px;
+        left: 0;
+    }
+}
+.filtro-next {
+    &::after {
+        border-width: 5px 0 5px 10px;
+        border-color: transparent transparent transparent $main;
+    }
+}
+.filtro-select {
+    margin: auto;
+    @include respond-to(tablet) {
+        display: none;
+    }
+    p {
+        color: $principal;
+    }
+    &::before {
+        border-color: $principal transparent transparent transparent;
+    }
+}

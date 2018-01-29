@@ -1,0 +1,20 @@
+# Urbandeli
+
+# TEAM/EQUIPO
+	Developer/Desarrollador	:	Agencia Digital Reactor
+	Contact/Contacto		:	contacto@reactor.cl
+	URI						:	http://reactor.cl/
+	Twitter					:	@reactorhq
+
+
+# SITE/SITIO
+	Created/Creado: 2016-03-29
+
+# TECHNOLOGY COLOPHON/TECNOLOGÍA
+
+	- HTML5
+	- CSS3
+	- jQuery
+	- Modernizr
+	- Wordpress
+	- Yeoman

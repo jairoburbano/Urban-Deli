@@ -1,0 +1,120 @@
+/*------------------------------------*\
+$FORM
+\*------------------------------------*/
+.style--flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    @include respond-to(tablet) {
+        width: calc(100% - 160px);
+        padding-left: 5px;
+    }
+    .selector {
+        width: calc(33% - 5px);
+    }
+}
+.selector {
+    position: relative;
+    width: 100%;
+    &::after {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 18px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 3.5px 0 3.5px;
+        border-color: $darkgray transparent transparent transparent;
+        z-index: $level1;
+    }
+    select {
+        width: 100%;
+        min-height: 40px;
+        padding: 0 12px 0 10px;
+        appearance:none;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        position: relative;
+        z-index: $level2;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.selector--mobile {
+    @include respond-to(tablet) {
+        display: none;
+    }
+}
+.selector--flex {
+    flex: 1;
+    @include respond-to(tablet) {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+    &::after {
+        border-color: $main transparent transparent transparent;
+    }
+    select {
+        min-height: 34px;
+    }
+}
+.selector--borde {
+    border-radius: 6px;
+    border: 1px solid $gray;
+    height: 36px;
+    &::after {
+        top: 15px;
+        border-color: $main transparent transparent transparent;
+    }
+    select {
+        min-height: 34px;
+    }
+}
+.selector--cuenta {
+    max-width: 280px;
+    height: 30px;
+    border: 2px solid white;
+    @include respond-to(tablet) {
+        display: none;
+    }
+    &::after {
+        border-width: 12px 6px 0 6px;
+        border-color: white transparent transparent transparent;
+        top: 8px;
+    }
+    select {
+        min-height: 26px;
+        color: white;
+    }
+}
+.selector--producto {
+    @extend .ultra;
+    height: 46px;
+    border: 1px solid $darkgray;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    width: auto;
+    @include respond-to(tablet) {
+        margin: 0 30px 0 15px;
+    }
+    @include respond-to(desktop) {
+        margin: 0 50px 0 15px;
+    }
+    &::after {
+        display: none;
+    }
+    p {
+        @include font-size(14px, 46px);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    select {
+        min-height: 44px;
+        padding: 0 15px;
+        text-align: center;
+    }
+}

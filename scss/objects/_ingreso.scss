@@ -1,0 +1,132 @@
+/*------------------------------------*\
+$Ingreso
+\*------------------------------------*/
+.tabs__block {
+    display: flex;
+    height: 60px;
+    border-bottom: 1px solid $main;
+    @include respond-to(desktop) {
+        display: none;
+    }
+}
+.tabs {
+    color: $gray;
+    @include font-size(16px, 60px);
+    @extend .ultra;
+    transition: all 300ms;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        margin-left: -4.5px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 4.5px 7px 4.5px;
+        border-color: transparent transparent $main transparent;
+        transition: all 300ms;
+        opacity: 0;
+    }
+    &.active {
+        color: $darkgray;
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+.tabs__container {
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+}
+.tabs__box {
+    width: 100%;
+    display: none;
+    padding: 0 10px;
+    max-width: 380px;
+    margin: auto;
+    &:first-child {
+        display: block;
+    }
+    &:last-child {
+        max-width: 480px;
+    }
+    @include respond-to(desktop) {
+        display: block;
+        width: 50%;
+        margin: 0;
+        padding: 0;
+    }
+}
+.formulario--ingreso, .formulario--ingreso-new {
+    .send-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            @include font-size(15px, 18px);
+        }
+    }
+}
+.formulario--crear, .formulario--crear-new {
+    .send-group {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input {
+            display: block;
+        }
+    }
+    #map {
+        margin-bottom: 20px;
+    }
+    .mensaje {
+        margin-top: 20px;
+    }
+}
+.pass {
+    max-width: 500px;
+    padding: 0 20px;
+    margin: auto;
+    text-align: center;
+    h2 {
+        @include font-size(20px, 24px);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    .pass__bajada {
+        @include font-size(16px, 24px);
+        margin-bottom: 30px;
+    }
+}
+.crear-form {
+    .message {
+        margin-bottom: 20px;
+        display: none;
+        p {
+            @include font-size(16px, 40px);
+            text-transform: none;
+        }
+    }
+}
+.text-bajada {
+    margin-bottom: 15px;
+    text-align: center;
+    @include font-size(16px, 20px);
+    @include respond-to(desktop) {
+        text-align: left;
+    }
+}
+.title__crear {
+    text-transform: uppercase;
+    color: $principal;
+    margin: 30px 0;
+}

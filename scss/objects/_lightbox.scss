@@ -1,0 +1,146 @@
+/*------------------------------------*\
+$LIGHTBOX
+\*------------------------------------*/
+.item__lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, .4);
+    z-index: $level10;
+}
+.ligthbox__content {
+    background: white;
+    width: 800px;
+    @include center;
+    display: flex;
+    padding: 30px;
+    .border--style {
+        width: 330px;
+    }
+}
+.lightbox__media {
+    margin-right: 30px;
+    @include respond-to(desktop) {
+        position: relative;
+        width: 330px;
+        &::after {
+            content: '';
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            background: url(../img/zoom.svg) center no-repeat;
+        }
+    }
+    .border--style {
+        height: 330px;
+    }
+}
+.lightbox__text {
+    text-align: left;
+    @include respond-to(desktop) {
+        width: calc(100% - 330px);
+    }
+    h2 {
+        @include font-size(30px, 36px);
+        color: $main;
+        @extend .ultra;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: cr(18px) !important;
+        line-height: cr(23px) !important;
+        margin-bottom: 30px;
+    }
+    .item__add {
+        margin-bottom: 30px;
+        height: 36px;
+        line-height: cr(36px);
+        @extend .ultra;
+    }
+    .lightbox__value {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        p {
+            @include font-size(20px, 24px);
+            @extend .ultra;
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+    }
+    .flavour {
+        margin-bottom: 30px;
+    }
+}
+.quantity {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    height: 34px;
+    .dec-numb, .inc-numb {
+        width: 40px;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $gray;
+        cursor: pointer;
+        svg {
+            fill: $darkgray;
+        }
+    }
+    input {
+        width: 45px;
+        height: 34px;
+        border-radius: 0;
+        @include font-size(18px, 32px);
+        text-align: center;
+        border: 1px solid $gray;
+        padding: 0;
+    }
+    .dec-numb {
+        svg {
+            width: 7px;
+            height: 4px;
+        }
+    }
+    .inc-numb {
+        svg {
+            width: 11px;
+            height: 11px;
+        }
+    }
+}
+.lightbox__close {
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    right: -46px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $gray;
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: $darkgray;
+    }
+}
+.light__alert__content {
+    width: 90%;
+    max-width: 480px;
+    @include center;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    .btn--main {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,397 @@
+/*------------------------------------*\
+$ESTADO
+\*------------------------------------*/
+.estado {
+    @include respond-to(tablet) {
+        padding-left: 220px;
+        max-width: 1160px;
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+    }
+    @include respond-to(desktop) {
+        padding-left: 350px;
+    }
+    @include respond-to(wide) {
+        padding-left: 0;
+    }
+    .tab--fill {
+        @include respond-to(tablet) {
+            position: absolute;
+            left: 15px;
+            bottom: 15px;
+            width: calc(100% - 30px);
+        }
+    }
+}
+.general__container {
+    width: 100%;
+}
+.estado--old {
+    .estado__container {
+        width: 100%;
+        &:first-child {
+            .estado__item {
+                p {
+                    &:first-child {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .estado__item {
+        border-bottom: none;
+        p {
+            &:first-child {
+                display: none;
+            }
+        }
+    }
+    .estado__block {
+        border-bottom: 1px solid $gray;
+        padding-bottom: 15px;
+        position: relative;
+        @include respond-to(desktop) {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+    .estado__resumen__container {
+        display: none;
+    }
+    .estado__resumen__block {
+        border-top: 1px solid $main;
+        border-left: 1px solid $main;
+        border-right: 1px solid $main;
+        margin-top: 0;
+        @include respond-to(tablet) {
+            border-right: 1px solid $gray;
+            border-bottom: 1px solid $main;
+            margin-left: 0;
+        }
+        &:last-child {
+            border-top: 1px solid $gray;
+            border-bottom: 1px solid $main;
+            margin-top: -1px;
+            @include respond-to(tablet) {
+                margin-top: 0;
+                border-top: 1px solid $main;
+                border-right: 1px solid $main;
+                border-left: 1px solid $gray;
+            }
+        }
+    }
+    .estado__resumen {
+        @include respond-to(desktop) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.estado--resume {
+    .estado__item {
+        p {
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+}
+.estado__block.active {
+    .estado__item {
+        border-bottom: none;
+        &:first-child {
+            p {
+                &:last-child {
+                    @include respond-to(desktop) {
+                        border-left: 1px solid $main;
+                    }
+                }
+            }
+        }
+        p {
+            transition: all 300ms;
+            &:last-child {
+                @include respond-to(desktop) {
+                    border: 1px solid $main;
+                    border-left: 1px solid $gray;
+                }
+            }
+        }
+    }
+    .accordeon {
+        background: $main;
+        &::after {
+            content: 'Cerrar';
+            color: white;
+        }
+    }
+}
+.estado__box {
+    height: 30px;
+    margin: 0 auto;
+    @include respond-to(desktop) {
+        position: relative;
+        transition: all 300ms;
+        margin-bottom: 8px;
+    }
+}
+.accordeon {
+    background: $gray;
+    border: none;
+    display: table;
+    width: 90px;
+    padding: 6px 5px;
+    text-align: center;
+    transition: all 300ms;
+    width: 100px;
+    &::after {
+        content: 'Ver detalles';
+        color: $darkgray;
+    }
+    @include respond-to(tablet) {
+        position: absolute;
+        top: 0;
+        left: 75%;
+        margin-left: -50px;
+        top: 50%;
+        margin-top: -25px;
+    }
+    @include respond-to(desktop) {
+        position: relative;
+        margin: 0 auto;
+        top: auto;
+        left: auto;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.estado__container {
+    max-width: 780px;
+    width: 100%;
+    margin: auto;
+}
+.estado__block {
+    margin-bottom: 40px;
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+    }
+}
+.estado__item {
+    display: flex;
+    border-bottom: 1px solid $gray;
+    @include respond-to(desktop) {
+        width: 25%;
+        flex-flow: column wrap;
+        border-bottom: none;
+        margin-left: -1px;
+        justify-content: flex-end;
+    }
+    p {
+        @include font-size(15px, 43px);
+        width: 50%;
+        @include respond-to(desktop) {
+            width: 100%;
+            padding: 0 0 0 20px;
+        }
+        &:first-child {
+            @include respond-to(tablet) {
+                width: 160px;
+            }
+        }
+        &:last-child {
+            @include respond-to(desktop) {
+                border: 1px solid $gray;
+                width: 100%;
+            }
+        }
+    }
+    .estado_status {
+        @include font-size(14px, 43px);
+        color: $main;
+        @extend .ultra;
+    }
+}
+.estado__resumen {
+    @include respond-to(tablet) {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    @include respond-to(desktop) {
+        margin-bottom: 100px;
+    }
+}
+.estado__title {
+    margin-bottom: 10px;
+    @include font-size(16px, 19px);
+    padding-left: 10px;
+    @include respond-to(tablet) {
+        width: 100%;
+    }
+}
+.estado__resumen__item {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.estado__resumen__block {
+    border: 1px solid $gray;
+    margin-top: -1px;
+    padding: 15px;
+    @include respond-to(tablet) {
+        width: 50%;
+        margin-top: 0;
+        margin-left: -1px;
+        position: relative;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 250px);
+    }
+    &:last-child {
+        @include respond-to(desktop) {
+            width: 250px;
+        }
+    }
+}
+.estado__resumen__media {
+    width: 60px;
+    height: 60px;
+}
+.estado__resumen__content {
+    flex: 1;
+    padding-left: 10px;
+    h2 {
+        @include font-size(14px, 16.8px);
+        color: $main;
+        @extend .ultra;
+        margin-bottom: 10px;
+    }
+    p {
+        @include font-size(15px, 26px);
+        span {
+            text-decoration: line-through;
+            @include font-size(13px, 26px);
+        }
+    }
+}
+.estado--resumen {
+    max-width: 540px;
+    margin: auto;
+    padding: 0 20px;
+    .title {
+        padding: 19px 27px;
+    }
+    .mi__title {
+        color: $principal;
+    }
+}
+.datos-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $gray;
+    padding: 0 10px;
+    p {
+        font-weight: bold;
+    }
+}
+.resumen__box {
+    width: 100%;
+    border: 1px solid $gray;
+    margin-bottom: 20px;
+}
+.resumen__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 30px;
+    align-items: center;
+    border-bottom: 1px solid $gray;
+    span {
+        font-weight: bold;
+    }
+}
+.resumen__producto {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-flow: row wrap;
+}
+.resumen__producto__box {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.resumen__producto__item {
+    margin-bottom: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.resumen__producto__title {
+    @extend .ultra;
+    color: $main;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+.resumen__subbox {
+    padding: 0 10px;
+    border-bottom: 1px solid $gray;
+}
+.resumen__box__item {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $gray;
+    margin-bottom: 7px;
+    padding: 0 10px;
+    &:last-child {
+        background: $gray;
+    }
+    p, strong {
+        @include font-size(16px, 16px);
+    }
+}
+.resumen__detalle {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray;
+    padding: 0 10px;
+    font-weight: bold;
+    p {
+        @include font-size(16px, 16px);
+    }
+    &:last-child {
+        border-bottom: 0;;
+    }
+}
+.tab__result__item {
+    height: 36px;
+    width: 100%;
+    padding: 0 15px;
+    border: 1px solid $lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.tab--fill {
+    background: $gray;
+    p {
+        font-weight: bold;
+    }
+}
